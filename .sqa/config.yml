@@ -1,0 +1,62 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.9
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/VForWaTer/vforwater-portal:
+      branch: master
+      repo: https://github.com/VForWaTer/vforwater-portal
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/VForWaTer/vforwater-portal git:
+        commands:
+        - /usr/bin/env sh .sqa/script.greasy-aquamarine-mastiff.sh
+        container: qc.acc_gummy-flax-fish
+  QC.Doc:
+    repos:
+      github.com/VForWaTer/vforwater-portal find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.gummy-emerald-dollar.sh
+        container: qc.doc_randy-white-rat
+      github.com/VForWaTer/vforwater-portal git:
+        commands:
+        - /usr/bin/env sh .sqa/script.hasty-celadon-bulldog.sh
+        container: qc.doc_scanty-amber-zorse
+      github.com/VForWaTer/vforwater-portal markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.beady-cerise-schnauzer.sh
+        container: qc.doc_messy-xanthic-vole
+  QC.Lic:
+    repos:
+      github.com/VForWaTer/vforwater-portal licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.flaky-copper-scorpion.sh
+        container: qc.lic_whiny-ruby-spaniel
+  QC.Sec:
+    repos:
+      github.com/VForWaTer/vforwater-portal bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.nerdy-amethyst-foxhound.sh
+        container: qc.sec_jumpy-indigo-shark
+  QC.Sty:
+    repos:
+      github.com/VForWaTer/vforwater-portal flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.tasty-pumpkin-cheetah.sh
+        container: qc.sty_scummy-periwinkle-gorilla
+      github.com/VForWaTer/vforwater-portal jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.sloppy-black-urchin.sh
+        container: qc.sty_jumpy-chocolate-javanese
+  QC.Ver:
+    repos:
+      github.com/VForWaTer/vforwater-portal get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.crabby-brown-chicken.sh
+        container: qc.ver_ready-brass-wallaby
+timeout: 5400
