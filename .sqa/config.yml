@@ -4,6 +4,9 @@ config:
     github.com/EOSC-synergy/sqaaas-tooling:
       branch: release/1.7.9
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/VForWaTer/documentation:
+      branch: master
+      repo: https://github.com/VForWaTer/documentation
     github.com/VForWaTer/vforwater-portal:
       branch: master
       repo: https://github.com/VForWaTer/vforwater-portal
@@ -15,48 +18,52 @@ sqa_criteria:
     repos:
       github.com/VForWaTer/vforwater-portal git:
         commands:
-        - /usr/bin/env sh .sqa/script.greasy-aquamarine-mastiff.sh
-        container: qc.acc_gummy-flax-fish
+        - /usr/bin/env sh .sqa/script.wimpy-sangria-buffalo.sh
+        container: qc.acc_beady-green-antelope
   QC.Doc:
     repos:
-      github.com/VForWaTer/vforwater-portal find_doc_files.py:
+      github.com/VForWaTer/documentation find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.gummy-emerald-dollar.sh
-        container: qc.doc_randy-white-rat
-      github.com/VForWaTer/vforwater-portal git:
+        - /usr/bin/env sh .sqa/script.skinny-bronze-gharial.sh
+        container: qc.doc_pasty-lilac-guppy
+      github.com/VForWaTer/documentation git:
         commands:
-        - /usr/bin/env sh .sqa/script.hasty-celadon-bulldog.sh
-        container: qc.doc_scanty-amber-zorse
-      github.com/VForWaTer/vforwater-portal markdownlint:
+        - /usr/bin/env sh .sqa/script.cheeky-asparagus-badger.sh
+        container: qc.doc_scaly-viridian-audemer
+      github.com/VForWaTer/documentation markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.beady-cerise-schnauzer.sh
-        container: qc.doc_messy-xanthic-vole
+        - /usr/bin/env sh .sqa/script.pokey-pear-audemer.sh
+        container: qc.doc_ready-cornflower-spoonbill
+      github.com/VForWaTer/documentation restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.muzzy-amber-whale.sh
+        container: qc.doc_frumpy-russet-seal
   QC.Lic:
     repos:
       github.com/VForWaTer/vforwater-portal licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.flaky-copper-scorpion.sh
-        container: qc.lic_whiny-ruby-spaniel
+        - /usr/bin/env sh .sqa/script.jumpy-auburn-sponge.sh
+        container: qc.lic_wheezy-amber-seal
   QC.Sec:
     repos:
       github.com/VForWaTer/vforwater-portal bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.nerdy-amethyst-foxhound.sh
-        container: qc.sec_jumpy-indigo-shark
+        - /usr/bin/env sh .sqa/script.tacky-cyan-blue.sh
+        container: qc.sec_pasty-chartreuse-binturong
   QC.Sty:
     repos:
       github.com/VForWaTer/vforwater-portal flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.tasty-pumpkin-cheetah.sh
-        container: qc.sty_scummy-periwinkle-gorilla
+        - /usr/bin/env sh .sqa/script.skimpy-buff-shrimp.sh
+        container: qc.sty_hazy-bronze-husky
       github.com/VForWaTer/vforwater-portal jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.sloppy-black-urchin.sh
-        container: qc.sty_jumpy-chocolate-javanese
+        - /usr/bin/env sh .sqa/script.lumpy-indigo-sheep.sh
+        container: qc.sty_breezy-cream-hyrax
   QC.Ver:
     repos:
       github.com/VForWaTer/vforwater-portal get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.crabby-brown-chicken.sh
-        container: qc.ver_ready-brass-wallaby
+        - /usr/bin/env sh .sqa/script.wiggy-pear-wolfhound.sh
+        container: qc.ver_gamy-zucchini-ragdoll
 timeout: 5400
